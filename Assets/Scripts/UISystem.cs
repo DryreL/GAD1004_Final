@@ -55,14 +55,26 @@ public class UISystem : MonoBehaviour
 
     public void Itchio()
     {
-        //Application.OpenURL("https://itch.io/profile/dryrel");
-        OpenLinkJSPlugin("https://itch.io/profile/dryrel");
+        if (Application.platform == RuntimePlatform.WebGLPlayer)
+        {
+            OpenLinkJSPlugin("https://itch.io/profile/dryrel");
+        }
+        else
+        {
+            Application.OpenURL("https://itch.io/profile/dryrel");
+        }
     }
 
     public void DryreLWebsite()
     {
-        //Application.OpenURL("https://dryrel.github.io");
-        OpenLinkJSPlugin("https://dryrel.github.io");
+        if (Application.platform == RuntimePlatform.WebGLPlayer)
+        {
+            OpenLinkJSPlugin("https://dryrel.github.io");
+        }
+        else
+        {
+            Application.OpenURL("https://dryrel.github.io");
+        }
     }
 
     public void QuitGame()
