@@ -22,6 +22,10 @@ public class GameManager : MonoBehaviour
     public AudioClip[] sounds;
     AudioSource audioSource;
 
+    public GameObject pauseMenu;
+    public GameObject pauseMenuWebGL;
+    bool pauseToggle = false;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -36,10 +40,35 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         if(Input.GetKeyDown(KeyCode.Q))
         {
             Debug.Log("Quitting...");
             Application.Quit();
+        }
+        */
+
+        if(Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Return))
+        {
+            if(pauseToggle)
+            {
+                if (Application.platform == RuntimePlatform.WebGLPlayer)
+                {
+                    pauseMenuWebGL.SetActive(true);
+                }
+                else
+                {
+                    pauseMenu.SetActive(true);
+                }
+            }
+            else
+            {
+                pauseMenuWebGL.SetActive(false);
+                pauseMenu.SetActive(false);
+
+            }
+
+            pauseToggle = !pauseToggle;
         }
     }
 
@@ -51,11 +80,22 @@ public class GameManager : MonoBehaviour
         audioSource.PlayOneShot(sounds[index]);
     }
 
+    public void GoToScene(string name)
+    {
+
+        SceneManager.LoadScene(name);
+    }
 
     public void ResetGame()
     {
 
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void QuitGame()
+    {
+
+        Application.Quit();
     }
 
 
