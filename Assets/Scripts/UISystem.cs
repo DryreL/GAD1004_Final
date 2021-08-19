@@ -53,15 +53,15 @@ public class UISystem : MonoBehaviour
         creditsObject.SetActive(false);
     }
 
-    public void Itchio()
+    public void ItchioWebsite()
     {
         if (Application.platform == RuntimePlatform.WebGLPlayer)
         {
-            OpenLinkJSPlugin("https://itch.io/profile/dryrel");
+            openWindow("https://dryrel.itch.io");
         }
         else
         {
-            Application.OpenURL("https://itch.io/profile/dryrel");
+            Application.OpenURL("https://dryrel.itch.io");
         }
     }
 
@@ -69,16 +69,23 @@ public class UISystem : MonoBehaviour
     {
         if (Application.platform == RuntimePlatform.WebGLPlayer)
         {
-            OpenLinkJSPlugin("https://dryrel.github.io");
+            openWindow("https://gokdenizcetin.com");
         }
         else
         {
-            Application.OpenURL("https://dryrel.github.io");
+            Application.OpenURL("https://gokdenizcetin.com");
         }
     }
 
     public void QuitGame()
     {
-        Application.Quit();
+        if (Application.platform == RuntimePlatform.WebGLPlayer)
+        {
+            Debug.Log("You cannot quit on browser");
+        }
+        else
+        {
+            Application.Quit();
+        }
     }
 }

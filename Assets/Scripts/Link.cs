@@ -1,13 +1,11 @@
 using UnityEngine;
 using System.Runtime.InteropServices;
 
-public class OpenLinkJS : MonoBehaviour
-{
-	public void OpenLinkJSPlugin(string link)
-	{
-#if !UNITY_EDITOR
-		openWindow("link");
-#endif
+public class Link : MonoBehaviour {
+	public void OpenLinkJSPlugin() {
+		#if !UNITY_EDITOR
+		openWindow("http://unity3d.com");
+		#endif
 	}
 
 	[DllImport("__Internal")]
