@@ -14,9 +14,17 @@ public class UISystem : MonoBehaviour
     void Start()
     {
         mainmenuObjects[0].SetActive(true);
-        mainmenuObjects[1].SetActive(true);
         mainmenuObjects[2].SetActive(true);
         creditsObject.SetActive(false);
+
+        if (Application.platform == RuntimePlatform.WebGLPlayer)
+        {
+            mainmenuObjects[1].SetActive(false);
+        }
+        else
+        {
+            mainmenuObjects[1].SetActive(true);
+        }
     }
 
     public void OpenLinkJSPlugin(string link)
@@ -47,8 +55,15 @@ public class UISystem : MonoBehaviour
     public void BackToMainMenu()
     {
         mainmenuObjects[0].SetActive(true);
-        mainmenuObjects[1].SetActive(true);
         mainmenuObjects[2].SetActive(true);
+        if (Application.platform == RuntimePlatform.WebGLPlayer)
+        {
+            mainmenuObjects[1].SetActive(false);
+        }
+        else
+        {
+            mainmenuObjects[1].SetActive(true);
+        }
 
         creditsObject.SetActive(false);
     }
@@ -81,10 +96,12 @@ public class UISystem : MonoBehaviour
     {
         if (Application.platform == RuntimePlatform.WebGLPlayer)
         {
+            mainmenuObjects[1].SetActive(false);
             Debug.Log("You cannot quit on browser");
         }
         else
         {
+            mainmenuObjects[1].SetActive(true);
             Application.Quit();
         }
     }
