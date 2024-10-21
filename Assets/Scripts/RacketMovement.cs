@@ -18,7 +18,7 @@ public class RacketMovement : MonoBehaviour
     void Update()
     {
         float v = Input.GetAxisRaw(axis);
-        GetComponent<Rigidbody2D>().velocity = new Vector2(0, v) * Speed;
+        GetComponent<Rigidbody2D>().linearVelocity = new Vector2(0, v) * Speed;
 
     }
 }

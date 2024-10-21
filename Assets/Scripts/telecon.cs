@@ -8,7 +8,7 @@ public class telecon : MonoBehaviour
     void Start()
     {
         gameObject.name = "teleshot";
-        GetComponent<Rigidbody2D>().velocity = new Vector2(2, 0);
+        GetComponent<Rigidbody2D>().linearVelocity = new Vector2(2, 0);
     }
 
     // Update is called once per frame

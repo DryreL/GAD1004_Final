@@ -58,3 +58,23 @@ The following packages were updated:
   com.unity.test-framework from version 1.1.11 to 1.1.24
   com.unity.textmeshpro from version 2.0.1 to 3.0.6
   com.unity.timeline from version 1.2.10 to 1.5.5
+
+=== Mon Oct 21 13:18:55 2024
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were added:
+  com.unity.ai.navigation@2.0.4
+  com.unity.modules.accessibility@1.0.0
+  com.unity.multiplayer.center@1.0.0
+The following packages were updated:
+  com.unity.collab-proxy from version 1.5.7 to 2.5.2
+  com.unity.ide.rider from version 3.0.7 to 3.0.31
+  com.unity.ide.visualstudio from version 2.0.8 to 2.0.22
+  com.unity.test-framework from version 1.1.24 to 1.4.5
+  com.unity.timeline from version 1.5.5 to 1.8.7
+  com.unity.toolchain.win-x86_64-linux-x86_64 from version 0.1.21-preview to 2.0.9
+  com.unity.ugui from version 1.0.0 to 2.0.0
+The following packages were removed:
+  com.unity.textmeshpro@3.0.6

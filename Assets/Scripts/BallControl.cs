@@ -36,7 +36,7 @@ public class BallControl : MonoBehaviour
     void ResetBall()
     {
         StartCoroutine(Invisible());
-        rb2d.velocity = Vector2.zero;
+        rb2d.linearVelocity = Vector2.zero;
         transform.position = Vector2.zero;
         Invoke("GoBall", 2f);
 
@@ -61,9 +61,9 @@ public class BallControl : MonoBehaviour
         {
             StartCoroutine(Invisible());
             Vector2 vel;
-            vel.x = rb2d.velocity.x;
-            vel.y = (rb2d.velocity.y / 2) + (coll.collider.attachedRigidbody.velocity.y / 3);
-            rb2d.velocity = vel;
+            vel.x = rb2d.linearVelocity.x;
+            vel.y = (rb2d.linearVelocity.y / 2) + (coll.collider.attachedRigidbody.linearVelocity.y / 3);
+            rb2d.linearVelocity = vel;
             GameManager.armut.PlayThis(0);
         }
 

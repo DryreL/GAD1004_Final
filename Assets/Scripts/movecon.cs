@@ -28,12 +28,12 @@ public class movecon : MonoBehaviour
     {
         if (other.name == "buffer")
         {
-            rb2d.velocity = new Vector2(0, 0);
+            rb2d.linearVelocity = new Vector2(0, 0);
         }
 
         if (other.name  == "teleshot")
         {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(2, 0);
+            GetComponent<Rigidbody2D>().linearVelocity = new Vector2(2, 0);
 
         }
 
